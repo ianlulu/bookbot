@@ -1,5 +1,5 @@
 import sys
-from stats import word_count, char_count, dict_sort
+from stats import word_count, char_count, dict_sort, chars_dict_to_sorted_list
 
 if len(sys.argv) != 2:
     print("Usage: python3 main.py <path_to_book>")
@@ -30,10 +30,14 @@ def main():
     num_chars = char_count(text)
     # print(num_chars)
 
-    num_list = dict_sort(num_chars)
+    # num_list = dict_sort(num_chars)
+    # for i in num_list:
+    #     if i["char"].isalpha() is True:
+    #         print(f"{i["char"]}: {i["num"]}")
+    num_list = chars_dict_to_sorted_list(num_chars)
     for i in num_list:
-        if i["char"].isalpha() is True:
-            print(f"{i["char"]}: {i["num"]}")
+        if i[0].isalpha() is True:
+            print(i)
 
     print("============= END ===============")
 
